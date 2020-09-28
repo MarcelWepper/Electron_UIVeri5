@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <base href="./" />
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <!-- Marcel CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Script to be able to load JSON format -->
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    ></script>
+
+    <!-- Load JS_File to launch CMD Controls -->
+    <script src="./run_file.js"></script>
+
+    <title>UIVERI5 Test Automation Launcher</title>
+  </head>
+
+  <body class="bg-blue" onLoad="ini()">
+    <div class="bg-purple">
+      <h1 class="text-light pl-5 pb-2 pt-2">UIVeri5 Launcher</h1>
+    </div>
+
+    <div class="container">
+      <!-- Initialisation 
+        <div class="row pb-2">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Initialisation</h5>
+                        <p class="card-text">Following Card is necessary to launch the test cases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Complete Installation</h5>
+                        <p class="card-text">Pressing this button is necessary to download everything.<br /> NPM and NODEJS necessary</p>
+                        <a onclick="installTC()" class="btn btn-primary">Installer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Copy Test-Cases</h5>
+                        <p class="card-text">Pressing this button downloads all the test cases.<br /> NPM and NODEJS necessary
+                        </p>
+                        <a onclick="copyTC()" class="btn btn-primary">Downloader</a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+      <!-- Header Test Cases -->
+      <div class="row pb-2 pt-5">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Test Cases</h5>
+              <p class="card-text">
+                Following Cards are launching the test cases.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Test Cases -->
+      <div class="row">
+        <div class="col-sm-6 mb-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Launch: CashFlow (Proxy) 1</h5>
+              <p class="card-text">
+                This button launches the CashFlow which passes.
+              </p>
+              <a onclick="launchCMD(1)" class="btn btn-primary"
+                >Run Test Cases</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 mb-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Launch: CashFlow (Proxy) 2</h5>
+              <p class="card-text">
+                This button launches the CashFlow which fails.
+              </p>
+              <a onclick="launchCMD(2)" class="btn btn-primary"
+                >Run Test Cases</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Header Reporting -->
+      <div class="row pb-2 pt-5">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Reporting</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table id="excelDataTable" class="table table-striped bg-light"></table>
+
+      <div class="row">
+        <div class="col-sm-6 mb-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Open Report of last Test</h5>
+              <p class="card-text">This button launches the report</p>
+              <a onclick="openReport()" class="btn btn-primary">Open Report</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 mb-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Launch Test Button</h5>
+              <p class="card-text">This button launches the test functions</p>
+              <a onclick="test()" class="btn btn-primary">Run Test</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        // Insert
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      firebase.database();
+      firebase.storage();
+    </script>
+  </body>
+</html>

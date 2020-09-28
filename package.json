@@ -1,0 +1,33 @@
+{
+  "name": "utal",
+  "version": "1.0.0",
+  "description": "uiveri5_test_automation_launcher",
+  "main": "main.js",
+  "dependencies": {
+    "@ui5/uiveri5": "^1.44.0",
+    "electron-dl": "^3.0.2",
+    "firebase": "^7.19.1",
+    "node-powershell": "^4.0.0"
+  },
+  "devDependencies": {
+    "electron": "^9.2.0",
+    "electron-builder": "^22.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "directories": {
+      "buildResources": "build"
+    },
+    "appId": "com.electron.UTAL",
+    "win": {
+      "icon": "build/icon.png"
+    }
+  },
+  "author": "Marcel-René Wepper",
+  "license": "ISC"
+}
