@@ -2,7 +2,10 @@
  This repository launches an Electron Application, which is used to download UIVERI5 as an E2E-testing framwork as well as testcases.
  Said testcases will be launched as well.
 
- # Not working by its own, as DB connection with firebase has to configured.
+ # Not working by its own, as DB connection with firebase has to be configured.
+ [Following repository](https://github.com/MarcelWepper/TC_UIVeri5) is automatically donwloaded to provide the test cases.
+The repository has to be altered as well to be functioning. 
+
 
  # Launch the Repository
  After downloading the repo, you have following commands:
